@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/introSplashFragment">
+
+    <fragment
+        android:id="@+id/introSplashFragment"
+        android:name="com.example.neveragain.presentation.ui.IntroSplashFragment"
+        android:label="IntroSplashFragment"
+        tools:layout="@layout/fragment_intro_splash" >
+        <action
+            android:id="@+id/action_introSplashFragment_to_setAddressFragment"
+            app:destination="@id/setAddressFragment"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.neveragain.presentation.ui.MainFragment"
+        android:label="mainFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_setAddressFragment"
+            app:destination="@id/setAddressFragment" />
+        <argument
+            android:name="AddressData"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/setAddressFragment"
+        android:name="com.example.neveragain.presentation.ui.SetAddressFragment"
+        android:label="SetAddressFragment" >
+        <action
+            android:id="@+id/action_setAddressFragment_to_mainFragment"
+            app:destination="@id/mainFragment" >
+            <argument
+                android:name="AddressData"
+                android:defaultValue="주소" />
+        </action>
+    </fragment>
+</navigation>
