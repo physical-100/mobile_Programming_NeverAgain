@@ -39,6 +39,7 @@ class SetAddressFragment : Fragment(R.layout.fragment_set_address) {
         BridgeInterface().data = null
     }
 
+
     private fun init() {
         binding.apply {
             webView.settings.javaScriptEnabled = true
@@ -66,9 +67,11 @@ class SetAddressFragment : Fragment(R.layout.fragment_set_address) {
             var bundle = bundleOf("data" to this.data)
             val navController = findNavController()
 
-            navController.popBackStack(R.id.mainFragment, false)
+
             navController.navigate(R.id.action_setAddressFragment_to_mainFragment, bundle)
+            navController.popBackStack(R.id.mainFragment, false)
 
         }
+
     }
 }

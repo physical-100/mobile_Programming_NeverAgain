@@ -35,8 +35,8 @@ class MainFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setaddress()
-
     }
+
 
     private fun setaddress() {
         binding.tvAddress.setOnClickListener {

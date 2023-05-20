@@ -24,7 +24,9 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_setAddressFragment"
-            app:destination="@id/setAddressFragment" />
+            app:destination="@id/setAddressFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
         <argument
             android:name="AddressData"
             app:argType="string" />
@@ -35,7 +37,7 @@
         android:label="SetAddressFragment" >
         <action
             android:id="@+id/action_setAddressFragment_to_mainFragment"
-            app:destination="@id/mainFragment" >
+            app:destination="@id/mainFragment">
             <argument
                 android:name="AddressData"
                 android:defaultValue="주소" />
