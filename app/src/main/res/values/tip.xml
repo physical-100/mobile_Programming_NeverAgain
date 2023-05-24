@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tip_prompt">전체</string>
+    <string-array name="tip_arrays">
+        <item>전체</item>
+        <item>무료</item>
+        <item>1000원 이하</item>
+        <item>2000원 이하</item>
+        <item>3000원 이하</item>
+    </string-array>
+</resources>
