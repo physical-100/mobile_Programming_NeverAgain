@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="장바구니"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingVertical="10dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/cartStoreName"
+        android:text="가게이름"
+        android:paddingVertical="5dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:paddingLeft="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/cartOKBtn"
+        android:text="배달 주문하기"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:paddingVertical="16dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
