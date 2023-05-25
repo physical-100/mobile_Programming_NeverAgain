@@ -9,6 +9,11 @@ data class Information(
     @ColumnInfo("day_off") val dayOff: String
 )
 
+data class Location(
+    @ColumnInfo("latitude") val latitude: Double,
+    @ColumnInfo("longitude") val longitude: Double
+)
+
 @Entity(tableName = "restaurant")
 data class Restaurant(
     @PrimaryKey(true) val id: Long = 0,
@@ -17,8 +22,24 @@ data class Restaurant(
     @ColumnInfo("information") val information: Information,
     @ColumnInfo("is_onlyone") val isOnlyone: Boolean,
     @ColumnInfo("is_delivery") val isDelivery: Boolean,
-    @ColumnInfo("is_takeout") val isTakeout: Boolean
-    // 최소주문금액, 배달팁, 주문가능지역 등 추가 필요
+    @ColumnInfo("is_takeout") val isTakeout: Boolean,
+    @Embedded
+    @ColumnInfo("location") val location: Location
+)
+
+@Entity(tableName = "image_restaurant",
+    primaryKeys = ["restaurant_id", "priority"],
+    foreignKeys = [
+        ForeignKey(
+            entity = Restaurant::class,
+            parentColumns = ["id"],
+            childColumns = ["restaurant_id"]
+        )
+    ])
+data class ImageRestaurant(
+    @ColumnInfo("restaurant_id") val restaurant_id: Long,
+    @ColumnInfo("priority") val priority: Int,
+    @ColumnInfo("src") val src: String
 )
 
 @Entity(tableName = "info_service",
@@ -106,6 +127,21 @@ data class Menu(
     @ColumnInfo("priority") val priority: Int,
     @ColumnInfo("restaurant_id") val restaurant_id: Long,
     @ColumnInfo("category") val category: String?,
+)
+
+@Entity(tableName = "image_menu",
+    primaryKeys = ["menu_id", "priority"],
+    foreignKeys = [
+        ForeignKey(
+            entity = Menu::class,
+            parentColumns = ["id"],
+            childColumns = ["menu_id"]
+        )
+    ])
+data class ImageMenu(
+    @ColumnInfo("menu_id") val menu_id: Long,
+    @ColumnInfo("priority") val priority: Int,
+    @ColumnInfo("src") val src: String
 )
 
 @Entity(tableName = "price_complex",
