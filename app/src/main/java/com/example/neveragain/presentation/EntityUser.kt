@@ -71,7 +71,9 @@ data class Review(
     @ColumnInfo("grade") val grade: Int,
     @ColumnInfo("text") val text: String,
     @ColumnInfo("user_id") val user_id: Long,
-    @ColumnInfo("restaurant_id") val restaurant_id: Long
+    @ColumnInfo("restaurant_id") val restaurant_id: Long,
+    @Embedded
+    @ColumnInfo("review_time") val reviewTime: Time
 )
 
 @Entity(tableName = "order",
@@ -92,6 +94,17 @@ data class Order(
     @ColumnInfo("user_id") val user_id: Long,
     @ColumnInfo("restaurant_id") val restaurant_id: Long,
     @ColumnInfo("service_type") val serviceType: Int,
+    @Embedded
+    @ColumnInfo("order_time") val orderTime: Time
+)
+
+data class Time(
+    @ColumnInfo("year") val year: Int,
+    @ColumnInfo("month") val month: Int,
+    @ColumnInfo("day") val day: Int,
+    @ColumnInfo("hour") val hour: Int,
+    @ColumnInfo("min") val min: Int,
+    @ColumnInfo("sec") val sec: Int,
 )
 
 @Entity(tableName = "ordered_menu",
