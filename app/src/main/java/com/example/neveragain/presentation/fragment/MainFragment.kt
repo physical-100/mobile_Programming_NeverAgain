@@ -1,4 +1,4 @@
-package com.example.neveragain.presentation.ui
+package com.example.neveragain.presentation.fragment
 
 import android.os.Bundle
 import android.util.Log

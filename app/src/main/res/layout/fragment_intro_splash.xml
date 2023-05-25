@@ -8,14 +8,14 @@
 
 
     <ImageView
-        android:layout_width="256dp"
-        android:layout_height="306dp"
-        android:layout_marginTop="76dp"
-        android:alpha="0.7"
+        android:layout_width="140dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="164dp"
+        android:alpha="0.6"
 
-        android:src="@drawable/neverduck"
+        android:src="@drawable/dudu_face"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

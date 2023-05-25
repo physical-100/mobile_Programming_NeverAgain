@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introSplashFragment"
-        android:name="com.example.neveragain.presentation.ui.IntroSplashFragment"
+        android:name="com.example.neveragain.presentation.fragment.IntroSplashFragment"
         android:label="IntroSplashFragment"
         tools:layout="@layout/fragment_intro_splash" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.neveragain.presentation.ui.MainFragment"
+        android:name="com.example.neveragain.presentation.fragment.MainFragment"
         android:label="mainFragment"
         tools:layout="@layout/fragment_main" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/setAddressFragment"
-        android:name="com.example.neveragain.presentation.ui.SetAddressFragment"
+        android:name="com.example.neveragain.presentation.fragment.SetAddressFragment"
         android:label="SetAddressFragment" >
         <action
             android:id="@+id/action_setAddressFragment_to_mainFragment"
