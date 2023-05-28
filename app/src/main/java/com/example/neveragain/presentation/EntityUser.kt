@@ -72,11 +72,10 @@ data class Review(
     @ColumnInfo("text") val text: String,
     @ColumnInfo("user_id") val user_id: Long,
     @ColumnInfo("restaurant_id") val restaurant_id: Long,
-    @Embedded
-    @ColumnInfo("review_time") val reviewTime: Time
+    @Embedded("review_time") val reviewTime: Time
 )
 
-@Entity(tableName = "order",
+@Entity(tableName = "order_content",
     foreignKeys = [
         ForeignKey(
             entity = User::class,
@@ -94,8 +93,7 @@ data class Order(
     @ColumnInfo("user_id") val user_id: Long,
     @ColumnInfo("restaurant_id") val restaurant_id: Long,
     @ColumnInfo("service_type") val serviceType: Int,
-    @Embedded
-    @ColumnInfo("order_time") val orderTime: Time
+    @Embedded("order_time") val orderTime: Time
 )
 
 data class Time(
@@ -118,8 +116,7 @@ data class Time(
 data class OrderedMenu(
     @PrimaryKey(true) val id: Long=0,
     @ColumnInfo("order_id") val order_id: Long,
-    @Embedded
-    @ColumnInfo("menu") val menu: Menu,
+    @Embedded("menu") val menu: Menu,
     @ColumnInfo("count") val count: Int,
 )
 
@@ -134,6 +131,5 @@ data class OrderedMenu(
 data class OrderedOption(
     @PrimaryKey(true) val id: Long=0,
     @ColumnInfo("ordered_menu_id") val ordered_menu_id: Long,
-    @Embedded
-    @ColumnInfo("option") val menu: Option,
+    @Embedded("option") val menu: Option,
 )
