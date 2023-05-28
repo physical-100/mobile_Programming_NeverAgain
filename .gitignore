@@ -1,5 +1,8 @@
 *.iml
 .gradle
+.gradle/
+build/
+
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -7,9 +10,33 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/.name
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
