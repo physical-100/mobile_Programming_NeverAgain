@@ -18,13 +18,11 @@ data class Location(
 data class Restaurant(
     @PrimaryKey(true) val id: Long = 0,
     @ColumnInfo("name") val name: String,
-    @Embedded
-    @ColumnInfo("information") val information: Information,
+    @Embedded("information") val information: Information,
     @ColumnInfo("is_onlyone") val isOnlyone: Boolean,
     @ColumnInfo("is_delivery") val isDelivery: Boolean,
     @ColumnInfo("is_takeout") val isTakeout: Boolean,
-    @Embedded
-    @ColumnInfo("location") val location: Location
+    @Embedded("location") val location: Location
 )
 
 @Entity(tableName = "image_restaurant",
@@ -86,7 +84,7 @@ data class DeliveryTipPrice(
 data class DeliveryTipLocation(
     @ColumnInfo("restaurant_id") val restaurant_id: Long,
     @ColumnInfo("type") val type: Int,
-    @ColumnInfo("location") val location: Int,
+    @ColumnInfo("location") val location: String,
     @ColumnInfo("tip") val tip: Int
 )
 
@@ -100,7 +98,7 @@ data class DeliveryTipLocation(
         )
     ])
 data class CategoryMenu(
-    @ColumnInfo("restaurant_id") val menu_id: Long,
+    @ColumnInfo("restaurant_id") val restaurant_id: Long,
     @ColumnInfo("name") val name: String,
     @ColumnInfo("priority") val priority: Int,
 )
@@ -108,14 +106,9 @@ data class CategoryMenu(
 @Entity(tableName = "menu",
     foreignKeys = [
         ForeignKey(
-            entity = Restaurant::class,
-            parentColumns = ["id"],
-            childColumns = ["restaurant_id"]
-        ),
-        ForeignKey(
             entity = CategoryMenu::class,
-            parentColumns = ["name"],
-            childColumns = ["category"]
+            parentColumns = ["restaurant_id","name"],
+            childColumns = ["restaurant_id","category"]
         )
     ])
 data class Menu(

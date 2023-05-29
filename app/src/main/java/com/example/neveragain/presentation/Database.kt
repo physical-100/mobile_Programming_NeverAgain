@@ -5,7 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Restaurant::class, CategoryMenu::class, Menu::class], version=1)
+@Database(entities = [
+    Restaurant::class, ImageRestaurant::class, InfoService::class, DeliveryTipPrice::class, DeliveryTipLocation::class,
+    CategoryMenu::class, Menu::class, ImageMenu::class, PriceComplex::class,
+    CategoryOption::class, Option::class,
+    User::class,
+    CustomList::class, Comment::class,
+    Review::class, Order::class,
+    OrderedMenu::class, OrderedOption::class], version=1)
 abstract class RestaurantDatabase: RoomDatabase() {
     abstract fun DAO(): DAO
 
